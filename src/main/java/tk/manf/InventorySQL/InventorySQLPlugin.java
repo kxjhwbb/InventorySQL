@@ -46,6 +46,8 @@ public final class InventorySQLPlugin extends JavaPlugin {
     @Override
     public void onEnable() {
         try {
+            this.getServer().getMessenger().registerOutgoingPluginChannel(this, "BungeeCord");
+            this.getServer().getMessenger().registerIncomingPluginChannel(this, "BungeeCord", new SwitchCommand());
             getDataFolder().mkdirs();
             FileConfiguration debug = ConfigManager.getConfig(this, "debug.yml");
             LoggingManager.getInstance().setLevel(debug.getInt("debug-level", 1000));
