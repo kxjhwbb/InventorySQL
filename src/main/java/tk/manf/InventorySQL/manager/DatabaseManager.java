@@ -96,6 +96,14 @@ public final class DatabaseManager implements Listener {
         addPlayerInventoryCache(p.getName(), p.getInventory());
         p.getInventory().clear();
         try {
+            
+            /*Need to make this plugin work with BUNGEE? add a delay: */
+            Thread.sleep(3000);
+            /*delay 3 seconds before reading the data from databases, 
+            because bungee will connect the target server between the palyer left the last server.
+            and make this plugin wrong. (get the database's date before last server 's save)
+            */
+            
             if (loadPlayer(p)) {
                 //Save
                 LanguageManager.getInstance().sendMessage(p, Language.SYNCED_INVENTORY);
