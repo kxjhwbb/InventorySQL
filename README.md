@@ -1,4 +1,5 @@
 ==InventorySQL==
 
-add a delay for work with bungee
-fix the switch command (testing)
+1.add a delay for work with bungee
+
+2.fix the switch command (testing)
